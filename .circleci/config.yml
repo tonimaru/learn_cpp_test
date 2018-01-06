@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: apk add git
+          command: apk --update add git
       - run:
           name: Build 
           command: cmake . && make all
