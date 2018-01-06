@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install
+          command: apk add git
+      - run:
           name: Build 
           command: cmake . && make all
       - run:
