@@ -2,15 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: madduci/docker-alpine-cpp:gcc-6
+      - image: tatsy/ubuntu-cxx:default
     steps:
       - checkout
       - run:
-          name: Install
-          command: apk --update add git
-      - run:
           name: Build 
-          command: cmake . && make VERBOSE=1 all
+          command: cmake . && make all
       - run:
           name: Test 
           command: make test
