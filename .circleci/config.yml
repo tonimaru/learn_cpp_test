@@ -10,7 +10,7 @@ jobs:
           command: apk --update add git
       - run:
           name: Build 
-          command: cmake . && make all
+          command: cmake . && make VERBOSE=1 all
       - run:
           name: Test 
           command: make test
