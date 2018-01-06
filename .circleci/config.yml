@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: madduci/docker-alpine-cpp:gcc-6
+    steps:
+      - checkout
+      - run:
+          name: Build 
+          command: cmake . && make all
+      - run:
+          name: Test 
+          command: make test
+
